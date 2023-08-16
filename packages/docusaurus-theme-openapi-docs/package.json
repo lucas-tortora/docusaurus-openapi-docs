@@ -24,6 +24,7 @@
   "types": "src/theme-openapi.d.ts",
   "main": "lib/index.js",
   "scripts": {
+    "prepack": "yarn build",
     "build": "tsc --build && node ../../scripts/copyUntypedFiles.mjs && prettier --config ../../.prettierrc.json --write \"lib/theme/**/*.js\"",
     "watch": "concurrently --names \"lib,lib-next,tsc\" --kill-others \"yarn babel:lib --watch\" \"yarn babel:lib-next --watch\" \"yarn tsc --watch\""
   },
@@ -32,7 +33,9 @@
     "@types/crypto-js": "^4.1.0",
     "@types/file-saver": "^2.0.5",
     "@types/lodash": "^4.14.176",
-    "concurrently": "^5.2.0"
+    "concurrently": "^5.2.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
   },
   "dependencies": {
     "@docusaurus/theme-common": ">=2.3.0 <2.5.0",
@@ -67,5 +70,6 @@
   },
   "engines": {
     "node": ">=14"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
