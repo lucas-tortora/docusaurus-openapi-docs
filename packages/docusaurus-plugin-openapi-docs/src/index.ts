@@ -36,10 +36,7 @@ export function getDocsPluginConfig(
       }
 
       // Search plugin-content-docs instances
-      if (
-        typeof data[0] === "string" &&
-        data[0] === "@docusaurus/plugin-content-docs"
-      ) {
+      if (typeof data[0] === "string" && data[0] === "@iota-wiki/plugin-docs") {
         const configPluginId = data[1].id ? data[1].id : "default";
         if (configPluginId === pluginId) {
           return data[1];
@@ -55,7 +52,7 @@ export function getDocsPluginConfig(
     }
 
     // Search plugin-content-docs instances
-    if (filteredConfig[0] === "@docusaurus/plugin-content-docs") {
+    if (filteredConfig[0] === "@iota-wiki/plugin-docs") {
       const configPluginId = filteredConfig[1].id
         ? filteredConfig[1].id
         : "default";
